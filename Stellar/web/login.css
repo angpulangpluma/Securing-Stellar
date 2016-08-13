@@ -1,0 +1,264 @@
+/*For Gotham Font Use*/
+@font-face {
+    font-family: Gotham Light;
+    src: url('C:/Users/gyra/Documents/College/WEBAPDE/Stellar/resources/Gotham-Light.otf');
+}
+/*-------*/
+
+/*Background*/
+#bg-img {
+	overflow: hidden;
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	width: 100%;
+	height: 100%;
+	/*background-color: #CCCCCC;*/
+}
+
+
+#bg-trapezoid1 {
+	display: inline-block;
+
+	margin-top: 1%;
+	margin-left: 1%;
+
+	position: absolute;
+	border-top: 10vh solid #300030;
+	border-left: 15vh solid #300030;
+	border-right: 10vh solid transparent;
+	height: 0;
+	width: 30vh;
+}
+
+#bg-trapezoid2 {
+	display: inline-block;
+
+	margin-top: 1%;
+	margin-left: 72.5%;
+
+	position: absolute;
+	border-top: 10vh solid #300030;
+	border-right: 15vh solid #300030;
+	border-left: 10vh solid transparent;
+	height: 0;
+	width: 30vh;
+}
+
+#bg-trapezoid3 {
+	display: inline-block;
+
+	margin-top: 7.1%;
+	margin-left: 1%;
+
+	position: absolute;
+	border-top: 10vh solid #300030;
+	border-left: 15vh solid #300030;
+	border-right: 10vh solid transparent;
+	height: 0;
+	width: 18.5vh;
+}
+
+#bg-trapezoid4 {
+	display: inline-block;
+
+	margin-top: 7.1%;
+	margin-left: 78%;
+
+	position: absolute;
+	border-top: 10vh solid #300030;
+	border-right: 15vh solid #300030;
+	border-left: 10vh solid transparent;
+	height: 0;
+	width: 18.5vh;
+}
+
+#bg-trapezoid5 {
+	display: inline-block;
+
+	margin-top: 13.2%;
+	margin-left: 1%;
+
+	position: absolute;
+	border-top: 10vh solid #480048;
+	border-left: 15vh solid #480048;
+	border-right: 10vh solid transparent;
+	height: 0;
+	width: 8vh;
+}
+
+#bg-trapezoid6 {
+	display: inline-block;
+
+	margin-top: 13.2%;
+	margin-left: 83%;
+
+	position: absolute;
+	border-top: 10vh solid #480048;
+	border-right: 15vh solid #480048;
+	border-left: 10vh solid transparent;
+	height: 0;
+	width: 8vh;
+}
+
+
+#bg-trapezoid9 {
+	display: inline-block;
+
+	margin-top: 29.2%;
+	margin-left: 1%;
+
+	position: absolute;
+	border-bottom: 10vh solid #C04848;
+	border-left: 15vh solid #C04848;
+	border-right: 10vh solid transparent;
+	height: 0;
+	width: 8vh;
+}
+
+#bg-trapezoid10 {
+	display: inline-block;
+
+	margin-top: 29.2%;
+	margin-left: 83%;
+
+	position: absolute;
+	border-bottom: 10vh solid #C04848;
+	border-right: 15vh solid #C04848;
+	border-left: 10vh solid transparent;
+	height: 0;
+	width: 8vh;
+}
+
+#bg-trapezoid11 {
+	display: inline-block;
+
+	margin-top: 35.3%;
+	margin-left: 1%;
+
+	position: absolute;
+	border-bottom: 10vh solid #F07241;
+	border-left: 15vh solid #F07241;
+	border-right: 10vh solid transparent;
+	height: 0;
+	width: 18.5vh;
+}
+
+#bg-trapezoid12 {
+	display: inline-block;
+
+	margin-top: 35.3%;
+	margin-left: 78%;
+
+	position: absolute;
+	border-bottom: 10vh solid #F07241;
+	border-right: 15vh solid #F07241;
+	border-left: 10vh solid transparent;
+	height: 0;
+	width: 18.5vh;
+}
+
+#bg-trapezoid13 {
+	display: inline-block;
+
+	margin-top: 41.35%;
+	margin-left: 1%;
+
+	position: absolute;
+	border-bottom: 10vh solid #F07241;
+	border-left: 15vh solid #F07241;
+	border-right: 10vh solid transparent;
+	height: 0;
+	width: 30vh;
+}
+
+#bg-trapezoid14 {
+	display: inline-block;
+
+	margin-top: 41.35%;
+	margin-left: 72.5%;
+
+	position: absolute;
+	border-bottom: 10vh solid #F07241;
+	border-right: 15vh solid #F07241;
+	border-left: 10vh solid transparent;
+	height: 0;
+	width: 30vh;
+}
+
+
+/*Login Form*/
+#login-form {
+	font-family: Gotham Light;
+	position: fixed;
+	width: 35%;
+	margin-top: 13%;
+	margin-left: 38%;
+
+	/*background-color: #000000;*/
+}
+
+#login-form>h2 {
+	text-align: center ;
+	color: #000000;
+	font-size: 30px;
+}
+
+#form-table {
+	width: 100%;
+	table-layout: fixed;
+}
+
+#form-table td {
+	text-align: center;
+	padding: 5px;
+	color: #000000;
+}
+
+#user-login input[type=text],
+#user-login input[type=password] {
+	width: 95%;
+
+	border: 1px solid #601848;
+	border-radius: 5px;
+	padding: 5px;
+
+	font-size: 12px;
+	font-family: Gotham Light;
+}
+
+#user-login input[type=submit] {
+	background-color: #F07241;
+	border: 0px;
+	border-radius: 5px;
+	padding: 5px;
+	width: 100%;
+
+	font-size: 15px;
+	font-family: Gotham Light;
+	color: white;
+}
+#user-login input[type=button] {
+	background-color: #480048;
+	border: 0px;
+	border-radius: 5px;
+	padding: 5px;
+	width: 100%;
+
+	font-size: 15px;
+	font-family: Gotham Light;
+	color: white;
+}
+.field-notice {
+	color: #F07241;
+	font-size: 12px;
+}
+#error-check {
+
+	font-size: 14px;
+	position: absolute;
+	left: 10%;
+	top: 25%;
+}
+
+/*-------*/

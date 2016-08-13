@@ -1,0 +1,906 @@
+html {
+	position: relative;
+	max-width: 1366px;
+	max-height: 100vh;
+
+	width: 1366px;
+
+	min-width: 800px;
+	min-height: 677px;	
+}
+
+/*Search Bar*/
+#search {
+	position: absolute;
+	top: 26.53%;
+	left: 72.18%;
+
+	width: 15.37%;
+	height: 48.97%;
+}
+
+#search button {
+	position: absolute;
+	left: 88%;
+
+	width: 12%;/*7.20%;*/
+	height: 112%;
+
+	
+	padding-right: 0px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px; 
+
+	border: none;
+}
+
+#searchBar {
+	position: absolute;
+	width: 92.80%;
+	height: 100%;
+
+	background-color: #FFFFFF;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px; 
+	padding-left: 3px;
+	margin-left: -3px;
+
+	font-size: 12px;
+	font-family: Gotham Light;
+
+	border: none;
+}
+/*-------*/
+
+
+/*Profile Pic*/
+#box-profPic {
+	position: absolute;
+	top: 23.07%;
+	right: 6%;
+
+	width: 17.56%;
+	height: 34.45%;
+}
+
+
+#box-profPic1 {
+	position: absolute;
+
+	width: 86.66%;
+	height: 86.66%;
+
+	border-radius: 5px;
+	padding: 0px;
+
+	background-color: #300030;
+}
+
+#box-profPic2 {
+	position: absolute;
+	right: 0%;
+	bottom: 0%;
+
+	width: 86.66%;
+	height: 86.66%;
+
+	border-radius: 5px;
+	padding: 0px;
+
+	background-color: #FFFFFF;
+}
+
+#box-profPicture {
+	position: absolute;
+
+	width: 90.39%;/*86.66%;*/
+	height: 90.39%;/*86.66%;*/
+
+	margin: 2.4%;
+	padding: 2.4%;
+	background-color: #480048;
+}
+
+
+#box-profPicture img {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+
+	margin: -2.4%;
+	padding: -2.4%;
+}
+/*-------*/
+
+
+/*Profile Desc*/
+#box-username {
+	position: absolute;
+	top: 58.07%;
+	right: 6%;
+
+	width: 17.56%;
+	height: 5.20%;
+
+	text-align: center;
+	vertical-align: middle;
+	line-height: 100%;
+
+	font-family: Gotham Light;
+	font-size: 24px;
+}
+
+.button-follow {
+	position: absolute;
+	top: 47.17%;
+	left: 2.63%;
+
+	width: 17.56%;
+	height: 5.20%;
+
+    background-color: #4CAF50; /* Green */
+    color: #FFFFFF;
+    border:  none;
+    padding: 4px;
+
+    text-align: center;
+    text-decoration: none;
+    font-family: Gotham Light;
+    font-size: 16px;
+}
+
+#progressBar {
+	position: absolute;
+	top: 63.07%;
+	right: 6%;
+
+	width: 17.56%;
+	height: 5.20%;
+
+	border-radius: 3px;
+    background-color: #E2E1EA; /*border*/
+    
+    padding: 1px;
+
+}
+.progressStyle {
+	width: 100%;
+	height: 100%;
+
+    /*-webkit-appearance: none;*/
+}
+progress::-webkit-progress-bar {
+   background-color: #FFFFFF;
+}
+progress::-webkit-progress-value {
+     background-color: #C04848;
+}
+/*-------*/
+
+
+/*Posts*/
+#box-filterView {
+	position: absolute;
+	top: 5.07%;
+	left: 25.18%;
+
+	width: 43.26%;
+	height: 7.03%;
+
+	border-radius: 5px;
+	padding: 0px;
+
+	background-color: #C04848;
+}
+
+#box-filterView button {
+	position: static;
+
+	width: 23%;
+	height: 100%;
+
+	background-color: #C04848;
+	font-family: Gotham Light;
+	font-size: 15px;
+	color: #FFFFFF;
+
+	margin-left: 1.19%;
+	border: none;
+}
+
+#box-postContainer {
+	position: absolute;
+	top: 24.48%;
+	left: 24.45%;
+
+	width: 40.72%;/*44.72%;*/
+	height: 65.56%;
+
+	border-radius: 5px;
+	padding: 2%;
+
+	background-color: #E2E1EA;
+	overflow-y: auto;
+}
+
+.box-post {
+	position: static;
+
+	width: 100%;
+	height: 20%;
+
+	border-radius: 5px;
+	padding: 0px;
+	margin-bottom: 3.5%;
+
+	background-color: #FFFFFF;
+}
+
+.box-postProfPic {
+	position: static;
+	z-index: 1;
+
+	width: 16%;/*14.18%;*/
+	height: 100%;
+
+	border-radius: 5px;
+	padding: 0px;
+
+	background-color: #AAAAAA;
+}
+
+.box-post textarea {
+	position: static;
+
+	width: 85.82%;
+	height: 20%;
+
+	border-radius: 5px;
+	padding: 0px;
+	margin-bottom: 3.5%;
+
+	background-color: #FFFFFF;
+}
+/*-------*/
+
+#box-title textarea {
+	position: absolute;
+	width: 95.5%;
+	height: 11.8%;
+
+	border-top-left-radius: 7px;
+	border-top-right-radius: 7px;
+	border-bottom: 1px solid #C04848;
+	
+	padding: 4px;
+	margin: 1.50%;
+	background-color: #FFFFFF;
+
+	font-family: Gotham;
+	font-size: 14px;
+	resize: none;
+	font-weight: bolder;
+}
+
+#box-postContent {
+	position: absolute;
+	top: 5.07%;
+	left: 25.18%;
+
+	width: 43.26%;
+	height: 20%;
+
+	border-radius: 5px;
+	padding: 0px;
+
+	background-color: #C04848;
+}
+
+#box-content textarea {
+	position: absolute;
+
+	width: 95.5%;
+	height: 30%;
+
+	border-bottom-left-radius: 7px; 
+	border-bottom-right-radius: 7px;
+	padding: 4px;
+	margin: 1.50%;
+	margin-top: 6%;
+	background-color: #FFFFFF;
+
+	font-family: Gotham Light;
+	font-size: 14px;
+	resize: none;
+}
+
+#box-postContent button {
+	position: absolute;
+	top: 60%;
+	right: 0%;
+
+	width: 18%;
+	height: 20%;
+
+	border-radius: 5px;
+	padding: 4px;
+	border-width: 1px;
+	margin: 1.50%;
+
+	background-color: #FFFFFF;
+	color: #C04848;
+
+	font-family: Gotham Light;
+	font-size: 14px;
+}
+
+#box-postContent > .rating {
+	position: absolute;
+	top: 55%;
+	
+	font-size: 35px;
+}
+/*-------*/
+
+
+
+
+
+/*Ranking*/
+#box-ranking {
+	position: absolute;
+	top: 8.59%;
+	left: 2%;
+	
+	width: 20%;
+	height: 59.24%;
+
+	background-color: #FFFFFF;
+}
+
+#box-ranking h1 {
+	position: static;
+	margin: 0px;
+
+	width: 100%;
+	height: 7%;
+
+	background-color: #FFFFFF;
+	font-size: 23px;
+	font-family: Gotham Light;
+	color: #300030;
+}
+
+#box-ranking1 {
+	position: static;
+
+	width: 100%;
+	height: 22.41%;
+
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+	padding-top: 0px;
+
+	background-color: #300030;
+}
+
+#box-ranking2 {
+	position: static;
+
+	width: 100%;
+	height: 22.41%;
+
+	background-color: #480048;
+}
+
+#box-ranking3 {
+	position: static;
+
+	width: 100%;
+	height: 22.41%;
+
+	background-color: #601848;
+}
+
+#box-ranking4 {
+	position: static;
+
+	width: 100%;
+	height: 22.41%;
+
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	padding-bottom: 0px;
+
+	background-color: #C04848;
+}
+
+.ranking-post {
+	position: absolute;
+	
+	width: 95%;
+	height: 19%;
+
+	border-radius: 5px;
+	padding: 0%;
+	margin: 2%;
+
+	background-color: #FFFFFF;
+	background: rgba(255, 255, 255, 0.35);
+}
+
+.ranking-postProfPic {
+	position: static;
+	float: left;
+
+	width: 29.18%;
+	height: 90%;
+
+	border-radius: 5px;
+	padding: 0px;
+	margin: 1.5%;
+
+	background-color: #AAAAAA;
+}
+
+/* .ranking-postText {
+	position: static;
+	
+	width: 70%;
+	height: 65%;
+} */
+
+.ranking-post textarea {
+	position: static;
+
+	width: 85.82%;
+	height: 20%;
+
+	border-radius: 5px;
+	padding: 0px;
+	margin-bottom: 3.5%;
+
+	background-color: #FFFFFF;
+}
+/*-------*/
+
+
+
+
+
+/*Following/Followers*/
+#text-followers, #text-following,
+#text-suggestions, #text-rankings {
+	position: absolute;
+	
+	width: 100%;
+	height: 23%;
+
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+
+	background-color: #930F40;
+	font-family: Gotham Light;
+}
+#text-rankings {
+	height: 9%;
+}
+#text-suggestions {
+	height: 18%;
+	background-color: #F07241;
+}
+
+#text-following {
+	background-color: #60B0E3;
+}
+
+#text-followers label, #text-following label,
+#text-suggestions label, #text-rankings label{
+	display: block;
+	text-align: center;
+	padding-top: 1%;
+
+	color: #FFFFFF;
+	font-size: 14px;
+}
+
+#text-rankings label{
+	font-size: 24px;
+}
+
+
+#box-following {
+	position: absolute;
+	top: 69%; 
+	left: 2.63%;
+
+	width: 17.56%;
+	height: 13.80%;
+
+	background-color: #E2E1EA;
+	padding: 0px;
+	border-radius: 5px;
+}
+
+#more-following {
+	position: absolute;
+
+	top: 73%;
+	width: 100%;
+	height: 23%;
+
+	background-color: transparent;
+}
+
+#more-following button {
+	position: absolute;
+	right: 8.75%;
+
+	width: 24%;
+	height: 100%;
+
+	color: #60B0E3;
+	border: 0;
+	font-family: Gotham Light;
+	background-color: transparent;
+}
+
+#more-following button:hover {
+	color: #FFFFFF;
+	background-color: #60B0E3;
+}
+
+#box-followingSuggestions {
+	position: static;
+
+	width: 94%;
+	height: 59%;
+
+	background-color: #E2E1EA;
+	padding-top: 11%;
+	padding-left: 6.25%;
+	border-radius: 5px;
+
+}
+
+#box-following1 {
+	float: left;
+	width: 16.21%;
+	height: 67%;
+
+	margin-right: 2.40%;
+	background-color: #300030;
+}
+
+#box-following2 {	
+	float: left;
+	width: 16.21%;
+	height: 67%;
+
+	margin-right: 2.40%;
+	background-color: #300030;
+}
+
+#box-following3 {
+	float: left;
+	width: 16.21%;
+	height: 67%;
+
+	margin-right: 2.40%;
+	background-color: #300030;
+}
+
+#box-following4 {
+	float: left;
+	width: 16.21%;
+	height: 67%;
+
+	margin-right: 2.40%;
+	background-color: #300030;
+}
+
+#box-following5 {
+	float: left;
+	width: 16.21%;
+	height: 67%;
+
+	margin-right: 2.40%;
+	background-color: #300030;
+}
+
+#box-followers {
+	position: absolute;
+	top: 84%;
+	left: 2.63%;
+
+	width: 17.56%;
+	height: 13.80%;
+
+	background-color: #E2E1EA;
+	padding: 0px;
+	border-radius: 5px;
+}
+
+#more-followers {
+	position: absolute;
+
+	top: 73%;
+	width: 100%;
+	height: 23%;
+
+	background-color: transparent;
+}
+
+#more-followers button {
+	position: absolute;
+	right: 8.75%;
+
+	width: 24%;
+	height: 100%;
+
+	color: #930F40;
+	border: 0;
+	font-family: Gotham Light;
+	background-color: transparent;
+}
+
+#more-followers button:hover {
+	color: #FFFFFF;
+	background-color: #930F40;
+}
+
+#box-followerSuggestions {
+	position: static;
+
+	width: 94%;
+	height: 59%;
+
+	background-color: #E2E1EA;
+	padding-top: 11%;
+	padding-left: 6.25%;
+	border-radius: 5px;
+
+}
+
+#box-follower1 {
+	float: left;
+	width: 16.21%;
+	height: 67%;
+
+	margin-right: 2.40%;
+	background-color: #300030;
+}
+
+#box-follower2 {	
+	float: left;
+	width: 16.21%;
+	height: 67%;
+
+	margin-right: 2.40%;
+	background-color: #300030;
+}
+
+#box-follower3 {
+	float: left;
+	width: 16.21%;
+	height: 67%;
+
+	margin-right: 2.40%;
+	background-color: #300030;
+}
+
+#box-follower4 {
+	float: left;
+	width: 16.21%;
+	height: 67%;
+
+	margin-right: 2.40%;
+	background-color: #300030;
+}
+
+#box-follower5 {
+	float: left;
+	width: 16.21%;
+	height: 67%;
+
+	margin-right: 2.40%;
+	background-color: #300030;
+}
+/*-------*/
+
+
+
+
+
+/*Suggested Users*/
+#box-suggested {
+	position: absolute;
+	top: 70.59%;
+	left: 2%;
+
+	width: 20%;
+	height: 19.79%;
+
+	background-color: #FFFFFF;
+}
+
+#box-suggestions {
+	position: static;
+
+	width: 94%;
+	height: 69%;
+
+	background-color: #E2E1EA;
+	padding-top: 12%;
+	padding-left: 6%;
+	border-radius: 5px;
+
+}
+
+.suggested img {
+	width: 100%;
+	height: 100%;
+}
+
+.suggested label {
+	width: 100%;
+	
+	display: block;
+	text-align: center;
+	padding-top: 1%;
+
+	font-family: Gotham Light;
+	font-size: 9px;
+}
+
+#box-suggested1 {
+	float: left;
+	width: 16.21%;
+	height: 47.36%;
+
+	margin-right: 2.40%;
+	background-color: #300030;
+}
+
+#box-suggested2 {	
+	float: left;
+	width: 16.21%;
+	height: 47.36%;
+
+	margin-right: 2.40%;
+	background-color: #300030;
+}
+
+#box-suggested3 {
+	float: left;
+	width: 16.21%;
+	height: 47.36%;
+
+	margin-right: 2.40%;
+	background-color: #300030;
+}
+
+#box-suggested4 {
+		float: left;
+	width: 16.21%;
+	height: 47.36%;
+
+	margin-right: 2.40%;
+	background-color: #300030;
+}
+
+#box-suggested5 {
+		float: left;
+	width: 16.21%;
+	height: 47.36%;
+
+	margin-right: 2.40%;
+	background-color: #300030;
+}
+
+#box-suggestions-name {
+	position: absolute;
+
+	top: 63%;
+	width: 100%;
+	height: 20%;
+
+	background-color: transparent;
+}
+
+#box-suggestions-name label {
+	position: absolute;
+	left: 0%;
+	
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	
+	border: 0;
+	font-family: Gotham Light;
+	color: #F07241;
+	background-color: transparent;
+	display: none;
+}
+
+#box-suggestions-change {
+	position: absolute;
+
+	top: 63%;
+	width: 100%;
+	height: 20%;
+
+	background-color: transparent;
+}
+#box-suggestions-change button {
+	position: absolute;
+	right: 9%;
+
+	width: 30%;
+	height: 100%;
+
+	border: 0;
+	font-family: Gotham Light;
+	color: #F07241;
+	background-color: transparent;
+}
+
+#box-suggestions-change button:hover {
+	color: #FFFFFF;
+	background-color: #F07241;
+}
+/*-------*/
+
+
+
+
+/*Rating*/
+.rating {
+	unicode-bidi: bidi-override;
+	direction: rtl;
+
+	position: relative;
+	bottom: 40%;
+	right: 1%;
+	font-family: Gotham Light;
+	font-size: 24px;
+}
+
+.rating > span {
+	display: inline-block;
+	position: relative;
+
+	color: #AAAAAA;
+	width: 1.1em;
+}
+
+.rate5:hover,
+.rate5:before {
+	color: #300030;
+}
+
+
+.rate4:hover,
+.rate4:before {
+	color: #480048;
+}
+
+.rate3:hover,
+.rate3:before {
+	color: #601848;
+}
+
+.rate2:hover,
+.rate2:before {
+	color: #C04848;
+}
+
+.rate1:hover {
+	color: #F07241; /*Red Orange*/
+}
+
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+	content: "\2605";
+	position: absolute;
+}

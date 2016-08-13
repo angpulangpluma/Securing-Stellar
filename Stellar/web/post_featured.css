@@ -1,0 +1,217 @@
+#post-overlay {
+	display: none;
+	position: absolute;
+	z-index: 999;
+	top: 0%;
+	left: 0%;
+	
+	height: 100%;
+	width: 100%;
+	
+	background-color: #fff;
+    background-color: rgba(0,0,0,0.5);
+	
+	z-index: 1;
+}
+
+#post-transcluscentBox {
+	position: absolute;
+	top: 5%;
+	left: 30%;
+	
+	height: 92.5%;
+	width: 36%;
+	
+	background-color: #fff;
+    background-color: rgba(0,0,0,0.75);
+	
+	z-index: 100;
+}
+
+#overlay-x {
+	position: absolute;
+	top: 0.5%;
+	right: 0.5%;
+
+	width: 30px;
+	height: 30px;
+
+	border-radius: 50%;
+	border: 0;
+	padding: 0;
+	background-color: transparent;
+	color: #FFFFFF;
+
+	font-size: 14px;
+}
+
+#overlay-x:hover {
+	background-color: #60B0E3;
+}
+
+#post-featured {
+	position: absolute;
+	top: 8.02%;
+	left: 6%;
+
+	width: 90%;
+	height: 16.5%;/*17.05%;*/
+
+	border-radius: 5px;
+	padding: 0px;
+
+
+	/*background-color: #F07241;*/
+}
+
+#post-featured-content {
+	position: static;
+
+	width: 100%;
+	height: 100%;
+
+	border-radius: 5px;
+	padding: 0px;
+	margin-bottom: 3.5%;
+
+	background-color: #FFFFFF;
+}
+
+#post-postProfPic {
+	position: static;
+
+	width: 20.18%;
+	height: 100%;
+
+	border-radius: 5px;
+	padding: 0px;
+
+	background-color: #AAAAAA;
+}
+
+#post-featured-content textarea {
+	position: static;
+
+	width: 85.82%;
+	height: 100%;
+
+	border-radius: 5px;
+	padding: 0px;
+	margin-bottom: 3.5%;
+
+	background-color: #FFFFFF;
+}
+
+#post-comments {
+	position: absolute;
+	top: 42.51%;
+	left: 6%;
+
+	width: 86%;/*44.72%;*/
+	height: 47.53%;
+
+	border-radius: 5px;
+	padding: 2%;
+
+	background-color: #E2E1EA;
+	overflow-y: auto;
+}
+
+/*Reply Box*/
+#post-reply {
+	position: absolute;
+	top: 27.02%;
+	left: 10.25%;
+
+	width: 80%;
+	height: 15%;/*17.05%;*/
+
+	border-radius: 5px;
+	padding: 0px;
+
+
+	/*background-color: #F07241;*/
+}
+
+#post-reply textarea {
+	position: absolute;
+
+	width: 95.5%;/*96.61%;*/
+	height: 47%;/*59.54%;*/
+
+	border-radius: 7px;
+	padding: 4px;
+	margin: 1.50%;
+	background-color: #FFFFFF;
+
+	font-family: Gotham Light;
+	font-size: 14px;
+	resize: none;
+}
+
+#post-reply button {
+	position: absolute;
+	top: 62.5%;
+	right: 0%;
+
+	width: 18%;
+	height: 22%;
+
+	border-radius: 5px;
+	padding: 0%;
+	border-width: 1px;
+	margin: 1.50%;
+
+	background-color: #C04848;
+	color: #FFFFFF;
+
+	font-family: Gotham Light;
+	font-size: 14px;
+}
+
+#post-reply > .rating {
+	position: absolute;
+	top: 55%;
+	
+	font-size: 35px;
+}
+
+/*Replies*/
+.reply-entry {
+	position: static;
+
+	width: 100%;
+	height: 24%;
+
+	border-radius: 5px;
+	padding: 0px;
+	margin-bottom: 3.5%;
+
+	background-color: #FFFFFF;
+}
+
+.reply-profPic {
+	position: static;
+
+	width: 15.18%;
+	height: 100%;
+
+	border-radius: 5px;
+	padding: 0px;
+
+	background-color: #AAAAAA;
+}
+
+.reply-entry textarea {
+	position: static;
+
+	width: 85.82%;
+	height: 20%;
+
+	border-radius: 5px;
+	padding: 0px;
+	margin-bottom: 3.5%;
+
+	background-color: #FFFFFF;
+}
+/*-------*/

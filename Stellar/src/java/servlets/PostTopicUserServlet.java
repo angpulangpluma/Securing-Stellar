@@ -1,0 +1,101 @@
+package servlets;
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class TopicServlet
+ */
+@WebServlet("/posttopicuser")
+public class PostTopicUserServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public PostTopicUserServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//		response.sendRedirect("http://localhost:8080/Stellar/user");
+		response.sendRedirect("/Stellar/user");
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		Connection conn = null;
+		Statement stmt = null;
+		
+		String title = request.getParameter("postTitle");
+		String content = request.getParameter("userpost");
+		String userId = request.getParameter("userId");
+		String username = request.getParameter("username");
+		
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/stellardb", "root", "");
+			
+			stmt = conn.createStatement();
+			
+			String query = "INSERT INTO topicdata (title, content, userId) VALUES ('" + title + "', '" + content + "', '" + userId + "')";
+			stmt.executeUpdate(query);
+			
+			//Get Latest Topic
+			String getTopic = "SELECT MAX(topicId) FROM topicdata WHERE userId = " + userId;
+			ResultSet rs = stmt.executeQuery(getTopic);
+			int latestTopic = 0;
+			
+			if(rs.next()) {
+				latestTopic = rs.getInt(1);
+			}
+			
+			//Get Followers
+			ArrayList<Integer> followers = new ArrayList<Integer>();
+			String getFollowers = "SELECT u.* FROM userdata as u, followerdata as f WHERE"
+					+ " f.userId = " + userId
+					+ " && f.followerId = u.userId";
+			rs = stmt.executeQuery(getFollowers);
+			
+			//Add followerId to followers
+			while(rs.next()) {
+				followers.add(rs.getInt("userId"));
+			}
+			
+			String updateQuery;
+			
+			//Insert into notifdata for each follower
+			for(int i = 0; i < followers.size(); i++) {
+				updateQuery = "INSERT INTO notifdata (userId, viewerId, topicId, commentId, isRating) VALUES ("
+						+ followers.get(i) + ", "
+						+ userId + ", "
+						+ latestTopic + ", 0, 0)";
+				stmt.executeUpdate(updateQuery);
+			}
+		}
+		catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
+		
+//		response.sendRedirect("http://localhost:8080/Stellar/user");
+		response.sendRedirect("/Stellar/user?username="+username+"&id="+userId);
+	}
+
+}
