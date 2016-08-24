@@ -77,7 +77,8 @@ public class LoginServlet extends HttpServlet {
 				session.setAttribute("id", id);
 				session.setAttribute("username", username);
 
-				response.sendRedirect("/Stellar/home?username="+username+"&id="+id);
+//				response.sendRedirect("/Stellar/home?username="+username+"&id="+id);
+				request.getRequestDispatcher("home.jsp").forward(request, response);
 			} else {
 				request.setAttribute("error", "Incorrect username or password");
 				request.getRequestDispatcher("login.jsp").forward(request, response);
