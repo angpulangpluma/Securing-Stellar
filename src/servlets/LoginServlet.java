@@ -5,6 +5,7 @@ package servlets;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
@@ -15,6 +16,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import org.owasp.esapi.ESAPI;
 
 /**
  * Servlet implementation class LoginServlet
@@ -52,22 +55,28 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
-		String username = request.getParameter("username");
+		String username = ESAPI.encoder().encodeForHTML(request.getParameter("username"));
 		String password = request.getParameter("pwd");
 		
 		Connection conn = null;
-		Statement stmt = null;
+		//Statement stmt = null;
 		
 	    try {
 	    	Class.forName("com.mysql.jdbc.Driver");	        
 	    	
 	    	conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/stellardb", "root", "");	
-	        stmt = conn.createStatement();
-
+	        //stmt = conn.createStatement();
+	    	
+	    	//prepared statement combined with esapi
 	        String query = "SELECT * FROM userdata " +
-	                       "WHERE username='" + username + "' AND password='" + password + "'";
-	       
-	        ResultSet rs = stmt.executeQuery(query);
+	                       "WHERE username = ? AND password= ?;";
+	        
+	        PreparedStatement ps = conn.prepareStatement(query);
+	        
+	        ps.setString(1, username);
+	        ps.setString(2, password);
+	        
+	        ResultSet rs = ps.executeQuery();
 
 	        if (rs.next()) {
 		        int rows = rs.getInt(1); 
@@ -77,13 +86,14 @@ public class LoginServlet extends HttpServlet {
 				session.setAttribute("id", id);
 				session.setAttribute("username", username);
 
-//				response.sendRedirect("/Stellar/home?username="+username+"&id="+id);
-				request.getRequestDispatcher("home.jsp").forward(request, response);
+				response.sendRedirect("/Stellar/home?username="+username+"&id="+id);
+			//	request.getRequestDispatcher("home").forward(request, response);
 			} else {
 				request.setAttribute("error", "Incorrect username or password");
 				request.getRequestDispatcher("login.jsp").forward(request, response);
 			}
 	    } catch(Exception e) {
+	    	e.printStackTrace();
 	    	System.out.println(e.getMessage());	    	
 	    	request.setAttribute("error", "Cannot log in at this moment");
 	    	request.getRequestDispatcher("login.jsp").forward(request, response);

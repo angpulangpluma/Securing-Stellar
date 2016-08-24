@@ -3,6 +3,7 @@ package servlets;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -12,6 +13,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import org.owasp.esapi.ESAPI;
 
 /**
  * Servlet implementation class TopicServlet
@@ -43,8 +46,8 @@ public class PostTopicUserServlet extends HttpServlet {
 		Connection conn = null;
 		Statement stmt = null;
 		
-		String title = request.getParameter("postTitle");
-		String content = request.getParameter("userpost");
+		String title = ESAPI.encoder().encodeForHTML(request.getParameter("postTitle"));
+		String content = ESAPI.encoder().encodeForHTML(request.getParameter("userpost"));
 		String userId = request.getParameter("userId");
 		String username = request.getParameter("username");
 		
@@ -53,10 +56,16 @@ public class PostTopicUserServlet extends HttpServlet {
 			
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/stellardb", "root", "");
 			
-			stmt = conn.createStatement();
+			//stmt = conn.createStatement();
 			
-			String query = "INSERT INTO topicdata (title, content, userId) VALUES ('" + title + "', '" + content + "', '" + userId + "')";
-			stmt.executeUpdate(query);
+			//preparedstatement
+			String query = "INSERT INTO topicdata (title, content, userId) VALUES (?, ?, ?);";
+			PreparedStatement ps = conn.prepareStatement(query);
+			ps.setString(1, title);
+			ps.setString(2, content);
+			ps.setString(3, userId);
+			ps.executeUpdate();
+			//stmt.executeUpdate(query);
 			
 			//Get Latest Topic
 			String getTopic = "SELECT MAX(topicId) FROM topicdata WHERE userId = " + userId;

@@ -2,6 +2,7 @@ package servlets;
 
 import java.io.IOException;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.util.ArrayList;
 
 import javax.servlet.ServletException;
@@ -10,6 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import org.owasp.esapi.ESAPI;
 
 import java.sql.Connection;
 import java.sql.Statement;
@@ -175,10 +178,10 @@ public class UserProfileServlet extends HttpServlet {
 		// TODO: Update userdata @ stellardb
 		
 		String userId = request.getParameter("edit-userId");
-		String username = request.getParameter("edit-username");
-		String firstName = request.getParameter("edit-firstname");
-		String lastName = request.getParameter("edit-lastname");
-		String desc = request.getParameter("edit-desc");
+		String username = ESAPI.encoder().encodeForHTML(request.getParameter("edit-username"));
+		String firstName = ESAPI.encoder().encodeForHTML(request.getParameter("edit-firstname"));
+		String lastName = ESAPI.encoder().encodeForHTML(request.getParameter("edit-lastname"));
+		String desc = ESAPI.encoder().encodeForHTML(request.getParameter("edit-desc"));
 		
 		System.out.println("userId: " + userId);
 		
@@ -192,29 +195,36 @@ public class UserProfileServlet extends HttpServlet {
 		Connection conn = null;
 		Statement stmt = null;
 		
-		String query = "UPDATE userdata " +
-		               "SET username = '"+username+"', firstName = '"+firstName+"', lastName = '"+lastName +"', description = '" + desc +
-				       "' WHERE userId = "+userId+";";
+		//preparedstatement
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/stellardb", "root", "");
-			stmt = conn.createStatement();
 			
-			stmt.executeUpdate(query);
+			String query = "UPDATE userdata " +
+		               "SET username = ?, firstName = ?, lastName = ?, description = ? " +
+				       " WHERE userId = ?;";
 			
+			PreparedStatement ps = conn.prepareStatement(query);
+			
+			ps.setString(1, username);
+			ps.setString(2, firstName);
+			ps.setString(3, lastName);
+			ps.setString(4, desc);
+			ps.setString(5, userId);
+			ps.executeUpdate();
 		
 //			session.setAttribute("id", session.getAttribute("id"));
 			session.setAttribute("username", username);
 
+			System.out.println("query: " + query);
 			
 		}
 		catch(Exception e) {
 			System.out.println(e.getMessage());
 		}
-		System.out.println("query: " + query);
 		response.setHeader("Refresh", "0; URL=user");
-		response.sendRedirect("/Stellar/user?username="+username+"&id="+session.getAttribute("id"));
+		response.sendRedirect("/Stellar/user?username="+request.getParameter("edit-username")+"&id="+session.getAttribute("id"));
 	}
 
 }
